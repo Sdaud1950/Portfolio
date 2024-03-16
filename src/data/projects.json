@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Saath.io",
+    "imageSrc": "projects/Screenshot_12.png",
+    "description": "Contributed to the development of Sath.io, a user-friendly and free job portal facilitating seamless job searches for users. Played an integral role in creating the platform.",
+    "skills": ["React", "Javascript", "HTML","CSS","Bootstrap"],
+    "demo": "https://saath.io/"
+  },
+  {
+    "title": "WPquads",
+    "imageSrc": "projects/Quads2.png",
+    "description": "Wpquads It's a WordPree plugin whose front-end UI is made with Reactjs, which helps you add multiple types of ads to your WordPress website.",
+    "skills": ["React", "wordpress", "HTML","CSS","Bootstrap","Hooks","React-Router"],
+    "demo": "https://wpquads.com/"
+  },
+  {
+    "title": "Project's",
+    "imageSrc": "projects/Git.png",
+    "description": "To enhance my skills in front-end development. I have made multiple learning projects with React JS, and I have added my GitHub repository below.",
+    "skills": ["React","Javascript" ,"HTML", "CSS","Bootstrap", "material UI"],
+    "demo": "https://github.com/Sdaud1950?tab=repositories"
+  }
+]
