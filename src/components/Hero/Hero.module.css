@@ -103,6 +103,9 @@
   .container {
     flex-direction: column-reverse;
   }
+  .title{
+    font-size: 48px;
+  }
   .content {
     align-items: center;
   }
