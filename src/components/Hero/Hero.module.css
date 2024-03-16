@@ -103,23 +103,6 @@
   .container {
     flex-direction: column-reverse;
   }
-
-  .title {
-    font-size: 48px;
-    }
-
-  .description {
-    font-size: 26;
-    position: relative;
-    top: -10px;
-  }
-
-  .contactBtn {
-    top: -13px;
-    position: relative;
-  }
-
-
   .content {
     align-items: center;
   }
