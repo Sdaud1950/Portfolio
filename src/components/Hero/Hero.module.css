@@ -24,9 +24,11 @@
   font-weight: 900;
   margin-bottom: 33px;
   font-family: system-ui;
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 1) 70%,
-      rgba(255, 255, 255, 0) 120%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 120%
+  );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
@@ -41,7 +43,7 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-
+ 
 }
 
 .contactBtn {
@@ -59,11 +61,21 @@
 .heroImg {
   width: 50%;
   z-index: 1;
-
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
 
@@ -94,9 +106,8 @@
   filter: blur(100px);
   z-index: 0;
 }
-
-.Contact-wrapper {
-  display: flex;
+.Contact-wrapper{
+    display: flex;
 }
 
 @media screen and (max-width: 830px) {
@@ -105,6 +116,19 @@
   }
   .title{
     font-size: 48px;
+    position: relative;
+    left: -15px;
+    top: 6px;
+  }
+  .description {
+    font-size: 26;
+    position: relative;
+    top: -10px;
+  }
+  .contactBtn {
+    top: -13px;
+    position: relative;
+    left: -57px;
   }
   .content {
     align-items: center;
