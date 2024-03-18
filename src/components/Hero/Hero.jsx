@@ -5,7 +5,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { getImageUrl } from "../../utils";
 import { HiOutlineMail } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import Img from "../../../assets/hero/profile-pic.png"
+import Img from "../../../assets/hero/mypic.png"
 
 export const Hero = () => {
   const Contact= useNavigate()
