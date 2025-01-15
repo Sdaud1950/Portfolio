@@ -26,11 +26,18 @@ export const Experience = () => {
             return (
               <li key={id} className={styles.historyItem}>
                 <div className="Logo-wrapper">
-                  <img
-                    src={getImageUrl(historyItem.imageSrc)}
-                    alt={`${historyItem.organisation} Logo`}
-                  />
+                  <a
+                    href="https://magazine3.company/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={getImageUrl(historyItem.imageSrc)}
+                      alt={`${historyItem.organisation} Logo`}
+                    />
+                  </a>
                 </div>
+
 
                 <div className={styles.historyItemDetails}>
                   <h3>{`${historyItem.role}, ${historyItem.organisation}`}</h3>
