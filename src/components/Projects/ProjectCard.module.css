@@ -6,93 +6,57 @@
   border-radius: 10px;
   background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
   box-shadow: 0 16px 14px 0 #04152d;
-  padding: 20px 28px; /* Adjusted for better spacing */
-  max-width: 400px; /* Increased width for better visibility on desktop */
-  margin: 16px auto; /* Center align on larger screens */
+  padding: 18px 24px;
+  max-width: 345px;
 }
 
 .image {
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .title {
-  font-size: 26px; /* Slightly increased size */
+  font-size: 25px;
   font-weight: 700;
-  margin-bottom: 10px; /* Added spacing */
 }
 
 .description {
-  margin-top: 8px;
-  font-size: 18px; /* Adjusted for readability */
+  margin-top: 6px;
+  font-size: 25px;
   font-weight: 400;
   text-align: justify;
-  line-height: 1.6; /* Better line spacing */
 }
 
 .skills {
   width: 100%;
-  margin-top: 16px;
+  margin-top: 14px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 8px; /* Increased spacing between skills */
+  gap: 6px;
   list-style: none;
-  justify-content: center; /* Center the skills */
 }
 
 .skill {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   border-radius: 100px;
   background: var(--color-dark);
-  padding: 6px 16px; /* Adjusted for better appearance */
+  padding: 2px 22px;
 }
 
 .links {
   width: 100%;
-  margin-top: 24px;
+  margin-top: 26px;
   display: flex;
-  justify-content: space-between; /* Spread out links */
-  gap: 12px; /* Added gap for better spacing */
+  justify-content: space-around;
 }
 
 .link {
   text-decoration: none;
   color: var(--color-text);
-  font-size: 18px; /* Reduced for better balance */
+  font-size: 22px;
   font-weight: 600;
   border-radius: 100px;
   background: var(--color-primary);
-  padding: 8px 16px; /* Increased padding */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.link:hover {
-  background-color: #0b84d3; /* Add hover effect */
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Desktop adjustments */
-@media screen and (min-width: 1024px) {
-  .container {
-    max-width: 500px; /* Further increase width for desktops */
-    padding: 24px 32px;
-  }
-
-  .title {
-    font-size: 28px; /* Larger font for desktop */
-  }
-
-  .description {
-    font-size: 20px;
-  }
-
-  .skills {
-    gap: 12px; /* More spacing on larger screens */
-  }
-
-  .link {
-    font-size: 20px;
-    padding: 10px 20px; /* Increased padding for larger screens */
-  }
+  padding: 1px 22px;
 }
