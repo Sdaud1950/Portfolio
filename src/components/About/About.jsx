@@ -24,7 +24,7 @@ const About = () => {
               <p>
               Hi there! 👋 I'm Daut Shaikh, a passionate React.js developer with a love for building engaging
                and responsive web applications. 
-               With 2+ years of experience in the field,
+               With 3+ years of experience in the field,
               I thrive on creating seamless user experiences and bringing ideas to life through clean and efficient code.
 
               </p>

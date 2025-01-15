@@ -21,7 +21,7 @@ const HandelNavigate=()=>{
       <div className={styles.content}>
         <h1 className={styles.title} >Daut Shaikh</h1>
         <p className={styles.description}>
-        Associate Frontend Developer with 2+ years of experience. I
+        Associate Frontend Developer with 3+ years of experience. I
           specialise in ReactJS, HTML, CSS, and JavaScript.
         </p>
         <a className={styles.contactBtn} onClick={HandelNavigate}>
