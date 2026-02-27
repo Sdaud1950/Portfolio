@@ -1,0 +1,5 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Azure">
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="#0078D4"/>
+  <path d="M30 92L56 36L73 62L58 92H30Z" fill="#FFFFFF"/>
+  <path d="M66 92L83 59L98 92H66Z" fill="#BFE3FF"/>
+</svg>

@@ -1,11 +1,32 @@
 [
-    {
-      "role": "Frontend Developer",
-      "organisation":"Magazine3 Technologies",
-      "startDate": "FEB, 2022",
-      "endDate": "Present",
-      "experiences": ["Worked under the guidance of a Senior Developer, responsible for code enhancement and bug resolution. Tasked with receiving and addressing tickets to troubleshoot and resolve issues, ensuring the smooth functioning of the systems and maintaining code integrity","List of the technical skills relevant to React development work. React, JavaScript, Redux, and ReduxTool kit, ContextApi, API intrgeation,React Router , Hooks, etc."],
-      "imageSrc": "history/logo1x-1.png"
-    }
-  ]
-  
+  {
+    "role": "Frontend Developer",
+    "organisation": "Magazine3 Technologies",
+    "startDate": "FEB, 2022",
+    "endDate": "March, 2025",
+    "experiences": [
+      "Worked under the guidance of a Senior Developer, responsible for code enhancement and bug resolution.",
+      "Addressed tickets to troubleshoot and resolve issues while maintaining overall system stability.",
+      "Worked with React, JavaScript, Redux Toolkit, Context API, API integration, React Router, and Hooks."
+    ],
+    "imageSrc": "history/logo1x-1.png",
+    "website": "https://magazine3.company/"
+  },
+  {
+    "role": "Software Developer / Frontend Developer",
+    "organisation": "Effiasoft Pvt. Ltd.",
+    "startDate": "APR, 2025",
+    "endDate": "Present",
+    "experiences": [
+      "Develop and maintain an enterprise travel booking platform using React.js and TypeScript.",
+      "Implemented complex filtering and sorting systems for flight and rail search experiences.",
+      "Built reusable Material UI components and custom Hooks to improve code maintainability.",
+      "Used Redux and React Query for state management, API caching, and synchronization.",
+      "Implemented Auth0 authentication and multilingual support using i18next.",
+      "Collaborated in Agile/Scrum with Jira, Git, and CI/CD pipelines.",
+      "Project: GetGoing (BCD Travel) – Corporate travel booking application enabling search, filtering, itinerary management, and improved UI scalability."
+    ],
+    "imageSrc": "history/effiasoft-logo.jpg",
+    "website": "https://effiasoft.com/"
+  }
+]

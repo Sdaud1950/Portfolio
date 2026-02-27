@@ -1,23 +1,65 @@
 [
   {
     "title": "Saath.io",
-    "imageSrc": "projects/Screenshot_12.png",
+    "imageSrc": "projects/saath-screenshot.png",
     "description": "Contributed to the development of Sath.io, a user-friendly and free job portal facilitating seamless job searches for users. Played an integral role in creating the platform.",
-    "skills": ["React", "Javascript", "HTML","CSS","Bootstrap"],
-    "demo": "https://saath.io/"
+    "skills": [
+      "React",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "Bootstrap"
+    ],
+    "demo": "https://saath.io/",
+    "github": "https://github.com/Sdaud1950"
   },
   {
     "title": "WPquads",
-    "imageSrc": "projects/Quads2.png",
+    "imageSrc": "projects/Quads.png",
     "description": "Wpquads It's a WordPree plugin whose front-end UI is made with Reactjs, which helps you add multiple types of ads to your WordPress website.",
-    "skills": ["React", "wordpress", "HTML","CSS","Bootstrap","Hooks","React-Router"],
-    "demo": "https://wpquads.com/"
+    "skills": [
+      "React",
+      "wordpress",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Hooks",
+      "React-Router"
+    ],
+    "demo": "https://wpquads.com/",
+    "github": "https://github.com/Sdaud1950"
   },
   {
     "title": "Project's",
     "imageSrc": "projects/Git.png",
     "description": "To enhance my skills in front-end development. I have made multiple learning projects with React JS, and I have added my GitHub repository below.",
-    "skills": ["React","Javascript" ,"HTML", "CSS","Bootstrap", "material UI"],
-    "demo": "https://github.com/Sdaud1950?tab=repositories"
+    "skills": [
+      "React",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "material UI"
+    ],
+    "demo": "https://github.com/Sdaud1950/Portfolio/tree/main/src",
+    "github": "https://github.com/Sdaud1950/Portfolio"
+  },
+  {
+
+    "title": "GetGoing (BCD Travel)",
+    "imageSrc": "projects/getgoing-screenshot.png",
+    "description": "Corporate travel booking application enabling search, filtering, and itinerary management.",
+     "skills": [
+      "React",
+      "Javascript",
+      "typescript",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "material UI"
+    ],
+    "demo": "https://www.getgoing.com/",
+    "github": "https://github.com/Sdaud1950"
   }
+
 ]

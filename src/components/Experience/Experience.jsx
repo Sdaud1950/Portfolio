@@ -6,36 +6,48 @@ import styles from "../../components/Experience/Experience.module.css";
 
 export const Experience = () => {
   return (
-    <section className={styles.container} id="experience">
+    <section className={styles.container} id="skills">
       <h2 className={styles.title}>Experience</h2>
       <div className={styles.content}>
-        <div className={styles.skills}>
-          {skills.map((skill, id) => {
-            return (
-              <div key={id} className={styles.skill}>
-                <div className={styles.skillImageContainer}>
-                  <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+        <div className={styles.skillsSection}>
+          <h3 className={styles.skillsTitle}>Technical Skills</h3>
+          <div className={styles.skills}>
+            {skills.map((skill, id) => {
+              return (
+                <div key={id} className={styles.skill}>
+                  <div className={styles.skillImageContainer}>
+                    <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                  </div>
+                  <p>{skill.title}</p>
                 </div>
-                <p>{skill.title}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
         <ul className={styles.history}>
           {history.map((historyItem, id) => {
             return (
               <li key={id} className={styles.historyItem}>
-                <div className="Logo-wrapper">
-                  <a
-                    href="https://magazine3.company/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <div className={styles.logoWrapper}>
+                  {historyItem.website ? (
+                    <a
+                      href={historyItem.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={getImageUrl(historyItem.imageSrc)}
+                        alt={`${historyItem.organisation} Logo`}
+                        className={styles.logoImage}
+                      />
+                    </a>
+                  ) : (
                     <img
                       src={getImageUrl(historyItem.imageSrc)}
                       alt={`${historyItem.organisation} Logo`}
+                      className={styles.logoImage}
                     />
-                  </a>
+                  )}
                 </div>
 
 

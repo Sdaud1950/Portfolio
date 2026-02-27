@@ -1,0 +1,44 @@
+@import "./vars.css";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+section,
+footer {
+	scroll-margin-top: 88px;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-inter), sans-serif;
+	color: var(--color-text);
+	background:
+		radial-gradient(1200px circle at 10% -20%, rgba(111, 134, 255, 0.16), transparent 48%),
+		radial-gradient(900px circle at 90% 0%, rgba(96, 126, 186, 0.12), transparent 40%),
+		var(--color-bg);
+	line-height: 1.5;
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-inter), sans-serif;
+	letter-spacing: -0.02em;
+}
+
+a {
+	color: inherit;
+}

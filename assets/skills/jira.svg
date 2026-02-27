@@ -1,0 +1,5 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jira">
+  <rect x="8" y="8" width="112" height="112" rx="14" fill="#0052CC"/>
+  <path d="M34 74C34 57 48 44 65 44H94C94 61 80 74 63 74H34Z" fill="#FFFFFF"/>
+  <path d="M34 94C34 77 48 64 65 64H84C84 81 70 94 53 94H34Z" fill="#B3D4FF"/>
+</svg>

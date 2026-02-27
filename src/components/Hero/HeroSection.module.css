@@ -1,0 +1,252 @@
+@import "../../vars.css";
+
+.container {
+  position: relative;
+  isolation: isolate;
+  margin: 2rem 10% 5rem;
+  padding: 2.75rem;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: center;
+  color: var(--color-text);
+  background: linear-gradient(150deg, rgba(12, 32, 60, 0.9), rgba(17, 43, 79, 0.74));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+.backgroundGlow {
+  position: absolute;
+  inset: auto -12% -35% auto;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(87, 108, 188, 0.4), rgba(4, 21, 45, 0));
+  animation: pulseGlow 9s ease-in-out infinite;
+  z-index: -1;
+}
+
+.backgroundGlowAlt {
+  position: absolute;
+  inset: -28% auto auto -16%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(120, 123, 255, 0.3), rgba(4, 21, 45, 0));
+  animation: pulseGlow 11s ease-in-out infinite reverse;
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.availableBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(157, 242, 210, 0.52);
+  background: rgba(157, 242, 210, 0.11);
+  color: #c3ffe7;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.availableBadge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #74f1c5;
+  box-shadow: 0 0 0 6px rgba(116, 241, 197, 0.2);
+}
+
+.socialProof {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.name {
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  line-height: 1.03;
+  font-weight: 700;
+}
+
+.role {
+  font-size: clamp(1.14rem, 1.8vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.tagline {
+  margin-top: 0.2rem;
+  font-size: clamp(1rem, 1.6vw, 1.14rem);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.summary {
+  margin-top: 0;
+  font-size: clamp(0.96rem, 1.2vw, 1.05rem);
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.credibilityStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.credibilityItem {
+  padding: 0.38rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.badges {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  padding: 0;
+}
+
+.badgeItem {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.ctaRow {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.profileWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileRadial {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(111, 134, 255, 0.28), rgba(111, 134, 255, 0.03) 50%, transparent 68%);
+  filter: blur(8px);
+  animation: profilePulse 7s ease-in-out infinite;
+}
+
+.imageRing {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 350px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(150deg, var(--color-primary), rgba(87, 108, 188, 0.25));
+  box-shadow: 0 14px 36px rgba(4, 21, 45, 0.45);
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) translateY(8px);
+    opacity: 0.82;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 1.5rem 6% 3.5rem;
+    padding: 1.45rem;
+    gap: 1.4rem;
+  }
+
+  .content {
+    order: 2;
+  }
+
+  .profileWrap {
+    order: 1;
+  }
+
+  .ctaRow {
+    width: 100%;
+  }
+
+  .ctaRow a,
+  .ctaRow button {
+    flex: 1;
+    min-width: 164px;
+  }
+
+  .metaRow {
+    justify-content: flex-start;
+  }
+
+  .credibilityItem {
+    font-size: 0.76rem;
+  }
+}
+
+@keyframes profilePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}

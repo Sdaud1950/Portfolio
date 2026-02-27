@@ -1,62 +1,307 @@
 @import "../../vars.css";
 
+.card {
+  position: relative;
+  width: 100%;
+  padding: 1px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(126, 137, 255, 0.75), rgba(108, 208, 255, 0.24));
+  transform: translateY(0) scale(1);
+  transition: transform 280ms ease-in-out;
+}
+
+.featured {
+  grid-column: span 2;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 19px;
+  box-shadow: 0 24px 34px rgba(4, 21, 45, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease-in-out;
+}
+
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
-  box-shadow: 0 16px 14px 0 #04152d;
-  padding: 18px 24px;
-  max-width: 345px;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 19px;
+  background: linear-gradient(160deg, rgba(12, 33, 64, 0.93), rgba(20, 47, 86, 0.84));
+  box-shadow: 0 18px 26px rgba(4, 21, 45, 0.32);
+  padding: 0.95rem;
+  overflow: hidden;
+  transition: transform 280ms ease-in-out;
+}
+
+.mediaFrame {
+  width: min(100%, 620px);
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(3, 16, 35, 0.75);
+}
+
+.browserBar {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dot {
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.browserTitle {
+  margin-left: 0.35rem;
+  font-size: 0.78rem;
+  opacity: 0.72;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 240px;
+  overflow: hidden;
 }
 
 .image {
-  margin-bottom: 26px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 280ms ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, rgba(4, 21, 45, 0.76), rgba(4, 21, 45, 0.2));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 280ms ease-in-out, transform 280ms ease-in-out;
+  pointer-events: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.62rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  pointer-events: auto;
+  transform: translateY(4px);
+  transition: transform 280ms ease-in-out;
 }
 
 .title {
-  font-size: 25px;
-  font-weight: 700;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-weight: 600;
+  margin-top: 0.95rem;
+  line-height: 1.2;
 }
 
-.description {
-  margin-top: 6px;
-  font-size: 25px;
-  font-weight: 400;
-  text-align: justify;
+.narrative {
+  margin-top: 0.58rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+  min-height: 7rem;
+}
+
+.narrativeLine {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.narrativeLine strong {
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .skills {
   width: 100%;
-  margin-top: 14px;
+  margin-top: 0.85rem;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 0.45rem;
   list-style: none;
 }
 
 .skill {
-  font-size: 22px;
-  font-weight: 400;
-  border-radius: 100px;
-  background: var(--color-dark);
-  padding: 2px 22px;
+  font-size: 0.79rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e3ebff;
+  padding: 0.25rem 0.62rem;
+  opacity: 0.84;
+  transition: opacity 280ms ease-in-out;
 }
 
-.links {
-  width: 100%;
-  margin-top: 26px;
-  display: flex;
-  justify-content: space-around;
+.mobileActions {
+  margin-top: 0.95rem;
+  display: none;
+  gap: 0.58rem;
+  flex-wrap: wrap;
 }
 
-.link {
+.primaryBtn,
+.secondaryBtn,
+.disabledBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   text-decoration: none;
   color: var(--color-text);
-  font-size: 22px;
+  font-size: 0.82rem;
   font-weight: 600;
-  border-radius: 100px;
-  background: var(--color-primary);
-  padding: 1px 22px;
+  border-radius: 999px;
+  padding: 0.4rem 0.88rem;
+  transition: transform 280ms ease-in-out, opacity 280ms ease-in-out;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, #6f86ff, #5e73e3);
+}
+
+.secondaryBtn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.primaryBtn svg,
+.secondaryBtn svg {
+  font-size: 0.8rem;
+}
+
+.disabledBtn {
+  opacity: 0.72;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-6px) scale(1.03);
+  }
+
+  .card:hover::after,
+  .card:focus-within::after {
+    opacity: 1;
+  }
+
+  .card:hover .image,
+  .card:focus-within .image {
+    transform: scale(1.05);
+  }
+
+  .card:hover .overlay,
+  .card:focus-within .overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card:hover .actions,
+  .card:focus-within .actions {
+    transform: translateY(-3px);
+  }
+
+  .card:hover .skill,
+  .card:focus-within .skill {
+    opacity: 1;
+  }
+
+  .primaryBtn:hover,
+  .secondaryBtn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .card,
+  .card::after,
+  .image,
+  .overlay,
+  .actions,
+  .skill,
+  .primaryBtn,
+  .secondaryBtn {
+    transition: none;
+    transform: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .mobileActions {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    padding: 0.85rem;
+  }
+
+  .title {
+    font-size: 1.28rem;
+  }
+
+  .narrative {
+    min-height: 0;
+  }
+
+  .narrativeLine {
+    font-size: 0.9rem;
+    min-height: 0;
+  }
+
+  .mobileActions {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .featured {
+    grid-column: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after,
+  .container,
+  .image,
+  .overlay,
+  .actions,
+  .skill,
+  .primaryBtn,
+  .secondaryBtn,
+  .disabledBtn {
+    transition: none;
+  }
 }

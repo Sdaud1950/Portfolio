@@ -1,150 +1,241 @@
 @import "../../vars.css";
 
 .container {
+  margin: 0 10% 5.5rem;
   color: var(--color-text);
+}
+
+.header {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Reduced gap for better spacing */
-  padding: 2rem;
+  gap: 0.6rem;
+}
+
+.eyebrow {
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.78;
 }
 
 .title {
-  text-align: center;
-  color: var(--color-text);
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+  line-height: 1.2;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 1rem;
-  gap: 2rem; /* Added gap to balance content */
-}
-
-.skills {
-  width: 45%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem; /* Adjusted gap for uniform spacing */
-}
-
-.skill {
+.timeline {
+  list-style: none;
+  margin: 1.8rem 0 0;
+  padding: 0 0 0 1.3rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem; /* Adjusted gap for better balance */
+  gap: 1.15rem;
 }
 
-.skillImageContainer {
-  background-color: var(--color-secondary);
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.25rem;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(87, 108, 188, 0.9), rgba(87, 108, 188, 0.2));
+  opacity: 0.9;
+  transition: opacity 280ms ease-in-out;
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  top: 1.1rem;
+  left: -1.08rem;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 5px rgba(87, 108, 188, 0.2);
+  transform: scale(1);
+  transition: transform 280ms ease-in-out, box-shadow 280ms ease-in-out, background-color 280ms ease-in-out;
+}
+
+.card {
+  border-radius: 18px;
+  padding: 1.15rem;
+  background: linear-gradient(150deg, rgba(13, 34, 66, 0.84), rgba(20, 47, 86, 0.76));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(0) scale(1);
+  transition: transform 280ms ease-in-out, box-shadow 280ms ease-in-out, border-color 280ms ease-in-out;
+}
+
+.cardTop {
+  display: flex;
+  gap: 0.95rem;
+  align-items: flex-start;
+}
+
+.logoWrap {
+  flex-shrink: 0;
+  width: 92px;
+  height: 52px;
+  border-radius: 10px;
+  background: var(--color-text);
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  transform: translateY(0);
+  transition: transform 280ms ease-in-out;
 }
 
-.skillImageContainer img {
-  width: 75px;
+.logoWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.skill p {
-  font-size: 1.5rem;
-  font-family: var(--font-roboto);
-  font-weight: 500;
-  text-align: center;
+.role {
+  font-size: clamp(1.08rem, 1.6vw, 1.35rem);
+  line-height: 1.4;
 }
 
-.history {
-  width: 45%;
+.organisation {
+  margin-top: 0.2rem;
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+}
+
+.roleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.currentBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  background: rgba(134, 182, 255, 0.22);
+  border: 1px solid rgba(134, 182, 255, 0.42);
+}
+
+.duration {
+  margin-top: 0.28rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.points {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Adjusted for consistency */
+  gap: 0.55rem;
 }
 
-.historyItem {
-  display: flex;
-  align-items: flex-start; /* Better alignment of items */
-  gap: 1.5rem;
-  background: linear-gradient(90deg, #19376d 0%, #132a53 100%);
+.points li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 0.55rem;
+  align-items: start;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  opacity: 0.92;
+  transition: opacity 280ms ease-in-out;
+}
+
+.impactPoint {
+  padding: 0.45rem 0.55rem;
   border-radius: 10px;
-  padding: 1.5rem;
+  background: rgba(111, 134, 255, 0.12);
+  border: 1px solid rgba(111, 134, 255, 0.25);
 }
 
-.historyItem img {
-  width: 100px; /* Reduced size for better scaling */
-  position: relative;
-  left: 1rem; /* Adjusted alignment */
+.points li svg {
+  margin-top: 0.25rem;
+  color: #86b6ff;
 }
 
-.historyItemDetails {
-  font-family: var(--font-roboto);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem; /* Reduced gap for tighter layout */
-}
-
-.historyItemDetails h3 {
-  font-size: 1.75rem;
-  font-weight: 500;
-}
-
-.historyItemDetails p {
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.6; /* Improved readability */
-}
-
-.historyItemDetails ul {
-  margin-top: 0.5rem;
-  font-size: clamp(1.2rem, 2vw, 1.4rem); /* Reduced font size for better fit */
-  text-align: justify;
-  list-style-type: disc;
-  margin-left: 1rem;
-}
-
-@media screen and (max-width: 830px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Reduced gap for mobile view */
+@media (hover: hover) and (pointer: fine) {
+  .container:hover .timeline::before {
+    opacity: 1;
   }
 
-  .skills {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem; /* Adjusted for compact layout */
+  .timelineItem:hover .dot,
+  .timelineItem:focus-within .dot {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 7px rgba(87, 108, 188, 0.28);
   }
 
-  .history {
-    width: 100%;
-    gap: 1.5rem; /* Consistent spacing */
+  .timelineItem:hover .card,
+  .timelineItem:focus-within .card {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 22px 40px rgba(4, 21, 45, 0.42);
+    border-color: rgba(255, 255, 255, 0.22);
   }
 
-  .historyItem img {
-    width: 75px; /* Adjusted for smaller screens */
-    left: 0.5rem; /* Better alignment */
+  .timelineItem:hover .logoWrap,
+  .timelineItem:focus-within .logoWrap {
+    transform: translateY(-2px);
   }
 
-  .historyItemDetails ul {
-    font-size: 1.2rem; /* Smaller font for better fit */
+  .timelineItem:hover .points li,
+  .timelineItem:focus-within .points li {
+    opacity: 1;
   }
 }
 
-.Logo-wrapper {
-  position: absolute;
+@media (hover: none), (pointer: coarse) {
+  .timeline::before,
+  .dot,
+  .card,
+  .logoWrap,
+  .points li {
+    transition: none;
+    transform: none;
+  }
 }
 
-.Logo-wrapper a img {
-  transition: transform 0.3s ease;
+@media screen and (max-width: 980px) {
+  .container {
+    margin: 0 6% 4rem;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .dot {
+    left: -0.84rem;
+  }
+
+  .cardTop {
+    align-items: flex-start;
+  }
+
+  .roleRow {
+    gap: 0.38rem;
+  }
 }
 
-.Logo-wrapper a img:hover {
-  transform: scale(1.1); /* Slight zoom effect */
+@media (prefers-reduced-motion: reduce) {
+  .timeline::before,
+  .dot,
+  .card,
+  .logoWrap,
+  .points li {
+    transition: none;
+  }
 }

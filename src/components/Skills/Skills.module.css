@@ -1,0 +1,142 @@
+@import "../../vars.css";
+
+.container {
+  margin: 0 10% 5.5rem;
+  color: var(--color-text);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.eyebrow {
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.title {
+  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.grid {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.categoryCard {
+  border-radius: 18px;
+  padding: 1.15rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.28s ease, border-color 0.28s ease;
+}
+
+.categoryTitle {
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.skillList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.skillItem {
+  border-radius: 12px;
+  padding: 0.7rem 0.55rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
+}
+
+.skillItem:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.iconWrap {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 0.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrap img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: rgba(4, 21, 45, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--color-text);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.45rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.iconWrap:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.skillItem p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .categoryCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    margin: 0 6% 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .skillList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

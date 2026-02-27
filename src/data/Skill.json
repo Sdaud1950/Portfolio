@@ -1,27 +1,54 @@
 [
-    {
-      "title": "HTML",
-      "imageSrc": "skills/html.png"
-    },
-    {
-      "title": "CSS",
-      "imageSrc": "skills/css.png"
-    },
-    {
-      "title": "React",
-      "imageSrc": "skills/react.png"
-    },
-    {
-      "title": "Redux",
-      "imageSrc": "skills/Redux.png"
-    },
-    {
-      "title": "Javascript",
-      "imageSrc": "skills/javascript.png"
-    },
-    {
-      "title": "Wordpress",
-      "imageSrc": "skills/Wordpress.png"
-    }
-  ]
-  
+  {
+    "title": "HTML",
+    "imageSrc": "skills/html.png"
+  },
+  {
+    "title": "CSS",
+    "imageSrc": "skills/css.png"
+  },
+  {
+    "title": "React",
+    "imageSrc": "skills/react.png"
+  },
+  {
+    "title": "Redux",
+    "imageSrc": "skills/Redux.png"
+  },
+  {
+    "title": "JavaScript",
+    "imageSrc": "skills/javascript.png"
+  },
+  {
+    "title": "TypeScript",
+    "imageSrc": "skills/typescript.svg"
+  },
+  {
+    "title": "Material UI",
+    "imageSrc": "skills/materialui.svg"
+  },
+  {
+    "title": "Bootstrap",
+    "imageSrc": "skills/bootstrap.svg"
+  },
+  {
+    "title": "Git",
+    "imageSrc": "skills/git.svg"
+  },
+  {
+    "title": "Jira",
+    "imageSrc": "skills/jira.svg"
+  },
+  {
+    "title": "Azure",
+    "imageSrc": "skills/azure.svg"
+  },
+  {
+    "title": "GraphQL",
+    "imageSrc": "skills/graphql.png"
+  },
+  {
+    "title": "WordPress",
+    "imageSrc": "skills/Wordpress.png"
+  }
+]

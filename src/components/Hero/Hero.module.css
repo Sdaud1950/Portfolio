@@ -27,6 +27,7 @@
     rgba(255, 255, 255, 1) 70%,
     rgba(255, 255, 255, 0) 120%
   );
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -48,6 +49,9 @@
   font-weight: 600;
   padding: 1rem 1.625rem;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.contactBtn:hover{
+  background-color: var(--color-primary-hover);
 }
 
 .heroImg {
@@ -120,6 +124,7 @@
     font-size: 1.5rem;
     padding: 0.875rem 1.5rem;
     margin-bottom: 2rem;
+    
   }
 
   .content {
