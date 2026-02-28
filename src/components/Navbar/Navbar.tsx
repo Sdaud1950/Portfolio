@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type MouseEvent } from "react";
 import style from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 type NavItem = {
   id: string;
@@ -11,6 +12,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+
 
   const navItems: NavItem[] = useMemo(
     () => [
@@ -69,12 +71,17 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  // theme logic is handled inside <ThemeToggle />
+
   return (
     <header className={`${style.header} ${isScrolled ? style.headerScrolled : ""}`}>
       <nav className={style.navbar} aria-label="Main navigation">
         <a href="#home" className={style.title} onClick={(event) => onNavigate(event, "home")}>
           Portfolio
         </a>
+
+        {/* theme toggle component */}
+        <ThemeToggle />
 
         <div className={style.menu}>
           <button

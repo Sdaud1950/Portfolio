@@ -1,4 +1,4 @@
-@import "../../vars.css";
+@import "/src/vars.css";
 
 .container {
   margin: 0 10% 5.5rem;
@@ -12,7 +12,8 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 1.5rem;
   background: linear-gradient(145deg, rgba(11, 36, 71, 0.9), rgba(25, 55, 109, 0.76));
-  box-shadow: 0 18px 40px rgba(4, 21, 45, 0.36);
+  background: var(--surface-gradient);
+  box-shadow: var(--shadow-soft);
 }
 
 .copyBlock {
@@ -49,15 +50,15 @@
 .statCard {
   border-radius: 16px;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--glass-1);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .statCard:hover {
   transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--border-color);
 }
 
 .statValue {

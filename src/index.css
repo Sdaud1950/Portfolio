@@ -1,4 +1,4 @@
-@import "./vars.css";
+@import "/src/vars.css";
 
 * {
 	box-sizing: border-box;
@@ -14,15 +14,18 @@ footer {
 }
 
 body {
-	margin: 0;
-	font-family: var(--font-inter), sans-serif;
-	color: var(--color-text);
-	background:
-		radial-gradient(1200px circle at 10% -20%, rgba(111, 134, 255, 0.16), transparent 48%),
-		radial-gradient(900px circle at 90% 0%, rgba(96, 126, 186, 0.12), transparent 40%),
-		var(--color-bg);
-	line-height: 1.5;
-	text-rendering: optimizeLegibility;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  color: var(--text-primary);
+  background: var(--radial-1), var(--radial-2), var(--bg-primary);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+/* smooth colour transition when theme toggles */
+html,
+body {
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,

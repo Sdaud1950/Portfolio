@@ -1,4 +1,4 @@
-@import "../../../vars.css";
+@import "/src/vars.css";
 
 .button {
   display: inline-flex;
@@ -16,24 +16,31 @@
 }
 
 .primary {
-  background: linear-gradient(135deg, #6f86ff, #5e73e3);
-  color: var(--color-text);
-  box-shadow: 0 10px 24px rgba(8, 24, 52, 0.38);
+  background: var(--accent-gradient);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-soft);
 }
 
 .primary:hover {
-  background: linear-gradient(135deg, #7c91ff, #6076eb);
-  box-shadow: 0 14px 28px rgba(8, 24, 52, 0.45);
+  background: var(--accent-gradient);
+  box-shadow: var(--shadow-elev);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-text);
+  background: var(--glass-1);
+  border-color: var(--border-color);
+  color: var(--text-primary);
   backdrop-filter: blur(10px);
 }
 
 .glass:hover {
-  background: rgba(255, 255, 255, 0.13);
-  border-color: rgba(255, 255, 255, 0.34);
+  background: var(--glass-2);
+  border-color: var(--border-color);
+}
+
+/* light theme tweaks */
+:global([data-theme="light"]) .primary {
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: var(--shadow-elev);
 }

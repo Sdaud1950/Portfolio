@@ -1,7 +1,7 @@
-@import "./vars.css";
+@import "/src/vars.css";
 
 .App{
-  background: linear-gradient(180deg, rgba(10, 25, 46, 0.76), rgba(7, 21, 40, 0.92));
+  background: var(--bg-primary);
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;

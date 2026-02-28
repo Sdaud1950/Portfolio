@@ -1,4 +1,4 @@
-@import "../../vars.css";
+@import "/src/vars.css";
 
 .container {
   position: relative;
@@ -11,9 +11,9 @@
   gap: 2.5rem;
   align-items: center;
   color: var(--color-text);
-  background: linear-gradient(150deg, rgba(12, 32, 60, 0.9), rgba(17, 43, 79, 0.74));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow-medium);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-elev);
   overflow: hidden;
 }
 
@@ -23,7 +23,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(87, 108, 188, 0.4), rgba(4, 21, 45, 0));
+  background: var(--radial-1);
   animation: pulseGlow 9s ease-in-out infinite;
   z-index: -1;
 }
@@ -34,7 +34,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(120, 123, 255, 0.3), rgba(4, 21, 45, 0));
+  background: var(--radial-2);
   animation: pulseGlow 11s ease-in-out infinite reverse;
   z-index: -1;
 }
@@ -58,9 +58,9 @@
   gap: 0.35rem;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(157, 242, 210, 0.52);
-  background: rgba(157, 242, 210, 0.11);
-  color: #c3ffe7;
+  border: 1px solid var(--badge-border);
+  background: var(--badge-bg);
+  color: var(--text-on-primary);
   font-size: 0.84rem;
   font-weight: 600;
 }
@@ -71,7 +71,7 @@
   height: 8px;
   border-radius: 50%;
   background: #74f1c5;
-  box-shadow: 0 0 0 6px rgba(116, 241, 197, 0.2);
+  box-shadow: 0 0 0 6px var(--dot-glow);
 }
 
 .socialProof {
@@ -127,8 +127,8 @@
   border-radius: 999px;
   font-size: 0.8rem;
   color: var(--color-text-muted);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  background: var(--glass-1);
 }
 
 .badges {
@@ -144,9 +144,9 @@
   padding: 0.45rem 0.75rem;
   border-radius: 999px;
   font-size: 0.88rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  background: var(--glass-1);
+  backdrop-filter: blur(6px);
 }
 
 .ctaRow {
@@ -168,7 +168,7 @@
   width: 440px;
   height: 440px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(111, 134, 255, 0.28), rgba(111, 134, 255, 0.03) 50%, transparent 68%);
+  background: var(--radial-1);
   filter: blur(8px);
   animation: profilePulse 7s ease-in-out infinite;
 }
@@ -180,8 +180,38 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   padding: 8px;
-  background: linear-gradient(150deg, var(--color-primary), rgba(87, 108, 188, 0.25));
-  box-shadow: 0 14px 36px rgba(4, 21, 45, 0.45);
+  background: var(--accent-gradient);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Light theme overrides: reduce heavy gradients, use subtle radial highlights and soft shadows */
+:global([data-theme="light"]) .container {
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-elev);
+  color: var(--color-text);
+}
+
+:global([data-theme="light"]) .backgroundGlow,
+:global([data-theme="light"]) .backgroundGlowAlt {
+  background: var(--radial-1);
+  opacity: 0.9;
+}
+
+:global([data-theme="light"]) .profileRadial {
+  background: var(--radial-1);
+  filter: blur(6px);
+}
+
+:global([data-theme="light"]) .credibilityItem {
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+:global([data-theme="light"]) .badgeItem {
+  background: #F1F5F9;
+  border: 1px solid var(--border-color);
+  color: var(--color-text);
 }
 
 .profileImage {
@@ -189,7 +219,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.1);
+  border: 4px solid var(--glass-2);
 }
 
 @keyframes pulseGlow {
@@ -250,3 +280,4 @@
     opacity: 1;
   }
 }
+

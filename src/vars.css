@@ -1,13 +1,14 @@
-:root {
-  --color-text: #f5f8ff;
-  --color-text-muted: #c0cbe1;
-  --color-primary: #6f86ff;
-  --color-secondary: #1f3f7a;
-  --color-dark: #0d2347;
-  --color-bg: #071528;
-  --color-surface: rgba(14, 33, 64, 0.72);
-  --color-surface-strong: rgba(14, 33, 64, 0.9);
+/* Theme tokens and design system variables
+   - Default (root) = DARK theme (premium SaaS dark UI)
+   - [data-theme="light"] = independent LIGHT theme (clean professional)
 
+   These variables are intentionally independent so light mode does NOT reuse
+   dark colors. Legacy --color-* tokens map to the new tokens for backward
+   compatibility with existing component styles.
+*/
+
+:root {
+  /* base spacing / fonts (theme-agnostic) */
   --font-inter: "Inter";
   --font-roboto: "Roboto";
   --font-outfit: "Outfit";
@@ -19,6 +20,113 @@
   --space-6: 1.5rem;
   --space-8: 2rem;
 
-  --shadow-soft: 0 10px 28px rgba(4, 18, 38, 0.28);
-  --shadow-medium: 0 18px 42px rgba(4, 18, 38, 0.38);
+  /* --- DARK THEME (default) --- */
+  --bg-primary: #0B0F19; /* deep dark */
+  --bg-secondary: #071528;
+  --bg-surface: #111827; /* card surfaces */
+  --text-primary: #E6EEF8; /* light gray/white */
+  --text-secondary: #AAB6CE; /* muted */
+  --primary: #6F86FF; /* blue-indigo */
+  --primary-hover: rgba(111, 134, 255, 0.9);
+  --border-color: rgba(255,255,255,0.06);
+  --accent-gradient: linear-gradient(150deg, #6F86FF, #5F7AD0);
+
+  /* subtle radial highlights used by backgrounds/profile glows */
+  --radial-1: radial-gradient(1200px circle at 10% -20%, rgba(111, 134, 255, 0.16), transparent 48%);
+  --radial-2: radial-gradient(900px circle at 90% 0%, rgba(96, 126, 186, 0.12), transparent 40%);
+
+  /* text color used on top of primary/accent backgrounds */
+  --text-on-primary: #ffffff;
+
+  /* text fade used for large headings (dark theme) */
+  --text-fade-from: rgba(255,255,255,1);
+  --text-fade-to: rgba(255,255,255,0);
+
+  /* component-specific tokens (dark) */
+  --surface-gradient: linear-gradient(150deg, rgba(13, 34, 66, 0.84), rgba(20, 47, 86, 0.76));
+  --timeline-line: linear-gradient(180deg, rgba(87, 108, 188, 0.9), rgba(87, 108, 188, 0.2));
+  --dot-glow: rgba(87, 108, 188, 0.2);
+  --dot-glow-strong: rgba(87, 108, 188, 0.28);
+  --chip-bg: rgba(111, 134, 255, 0.12);
+  --chip-border: rgba(111, 134, 255, 0.25);
+  --badge-bg: rgba(134, 182, 255, 0.22);
+  --badge-border: rgba(134, 182, 255, 0.42);
+
+  /* header / navbar backgrounds (theme-aware) */
+  --header-bg: rgba(8, 22, 42, 0.35);
+  --header-bg-scrolled: rgba(8, 22, 42, 0.78);
+
+  /* glass overlays used across components (small alpha layers) */
+  --glass-1: rgba(255, 255, 255, 0.04);
+  --glass-2: rgba(255, 255, 255, 0.08);
+  --glass-3: rgba(255, 255, 255, 0.12);
+
+  /* shadows for dark theme (soft, deeper) */
+  --shadow-elev: 0 14px 36px rgba(2,8,23,0.6);
+  --shadow-soft: 0 8px 24px rgba(2,8,23,0.45);
+
+  /* legacy token mapping for backward compatibility */
+  --color-bg: var(--bg-primary);
+  --color-surface: var(--bg-surface);
+  --color-surface-strong: rgba(17,24,39,0.96);
+  --color-text: var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: #1f3f7a;
+}
+
+/* --- LIGHT THEME (independent palette) --- */
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC; /* subtle layered background */
+  --bg-surface: #FFFFFF; /* cards and surfaces are white */
+  --text-primary: #0F172A; /* very dark text */
+  --text-secondary: #475569;
+  --primary: #2563EB; /* vivid blue for actions */
+  --primary-hover: rgba(37,99,235,0.12);
+  --border-color: #E2E8F0; /* light neutral border */
+  --accent-gradient: linear-gradient(150deg, #3B82F6, #6366F1); /* blue-indigo adapted */
+
+  /* radial highlights for light theme (so light mode uses independent subtle tones) */
+  --radial-1: radial-gradient(1200px circle at 10% -20%, rgba(99,102,241,0.06), transparent 48%);
+  --radial-2: radial-gradient(900px circle at 90% 0%, rgba(96,126,186,0.04), transparent 40%);
+
+  --text-on-primary: #FFFFFF;
+
+  /* text fade for light theme headings (use dark text fading to transparent) */
+  --text-fade-from: rgba(15,23,42,1);
+  --text-fade-to: rgba(15,23,42,0);
+
+  /* component-specific tokens (light) */
+  --surface-gradient: var(--bg-surface);
+  --timeline-line: linear-gradient(180deg, rgba(99,102,241,0.14), rgba(99,102,241,0.04));
+  --dot-glow: rgba(59,130,246,0.12);
+  --dot-glow-strong: rgba(59,130,246,0.18);
+  --chip-bg: rgba(59,130,246,0.06);
+  --chip-border: rgba(59,130,246,0.08);
+  --badge-bg: rgba(59,130,246,0.08);
+  --badge-border: rgba(59,130,246,0.12);
+
+  /* header / navbar backgrounds for light theme */
+  --header-bg: rgba(255,255,255,0.6);
+  --header-bg-scrolled: rgba(255,255,255,0.9);
+
+  /* glass overlays adapted for light theme */
+  --glass-1: rgba(2,6,23,0.04);
+  --glass-2: rgba(2,6,23,0.06);
+  --glass-3: rgba(2,6,23,0.08);
+
+  /* shadows for light theme (soft elevation) */
+  --shadow-elev: 0 6px 18px rgba(15,23,42,0.06);
+  --shadow-soft: 0 4px 12px rgba(15,23,42,0.06);
+
+  /* legacy token mapping for backward compatibility */
+  --color-bg: var(--bg-primary);
+  --color-surface: var(--bg-surface);
+  --color-surface-strong: #ffffff;
+  --color-text: var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
 }

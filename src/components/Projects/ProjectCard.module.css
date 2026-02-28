@@ -1,13 +1,14 @@
-@import "../../vars.css";
+@import "/src/vars.css";
 
 .card {
   position: relative;
   width: 100%;
   padding: 1px;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(126, 137, 255, 0.75), rgba(108, 208, 255, 0.24));
+  background: var(--accent-gradient);
   transform: translateY(0) scale(1);
-  transition: transform 280ms ease-in-out;
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
 }
 
 .featured {
@@ -19,10 +20,11 @@
   position: absolute;
   inset: 1px;
   border-radius: 19px;
-  box-shadow: 0 24px 34px rgba(4, 21, 45, 0.45);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 6px 12px rgba(0,0,0,0.08), 0 20px 40px rgba(0,0,0,0.12);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 280ms ease-in-out;
+  transition: opacity 250ms ease-out, box-shadow 250ms ease-out;
+  will-change: opacity, box-shadow;
 }
 
 .container {
@@ -32,11 +34,12 @@
   height: 100%;
   min-height: 100%;
   border-radius: 19px;
-  background: linear-gradient(160deg, rgba(12, 33, 64, 0.93), rgba(20, 47, 86, 0.84));
-  box-shadow: 0 18px 26px rgba(4, 21, 45, 0.32);
+  background: var(--surface-gradient);
+  box-shadow: var(--shadow-soft);
   padding: 0.95rem;
   overflow: hidden;
-  transition: transform 280ms ease-in-out;
+  transition: box-shadow 250ms ease-out;
+  will-change: box-shadow;
 }
 
 .mediaFrame {
@@ -44,8 +47,10 @@
   margin: 0 auto;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(3, 16, 35, 0.75);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
 }
 
 .browserBar {
@@ -54,15 +59,16 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0 0.7rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--glass-1);
+  border-radius: 13px 13px 0 0;
 }
 
 .dot {
   width: 0.58rem;
   height: 0.58rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--text-on-primary);
 }
 
 .browserTitle {
@@ -77,18 +83,25 @@
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 240px;
+  height: 220px;
   overflow: hidden;
+  background: var(--bg-primary);
+  border-radius: 0 0 12px 12px;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transform: scale(1);
-  transition: transform 280ms ease-in-out;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.05);
 }
 
 .overlay {
@@ -97,11 +110,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to top, rgba(4, 21, 45, 0.76), rgba(4, 21, 45, 0.2));
+  background: var(--glass-2);
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 280ms ease-in-out, transform 280ms ease-in-out;
+  transition: opacity 250ms ease-out, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
   pointer-events: none;
+  will-change: opacity, transform;
 }
 
 .actions {
@@ -111,7 +125,8 @@
   justify-content: center;
   pointer-events: auto;
   transform: translateY(4px);
-  transition: transform 280ms ease-in-out;
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
 }
 
 .title {
@@ -153,12 +168,13 @@
   font-size: 0.79rem;
   font-weight: 500;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #e3ebff;
+  background: var(--glass-1);
+  border: 1px solid var(--border-color);
+  color: var(--text-on-primary);
   padding: 0.25rem 0.62rem;
   opacity: 0.84;
-  transition: opacity 280ms ease-in-out;
+  transition: opacity 250ms ease-out;
+  will-change: opacity;
 }
 
 .mobileActions {
@@ -166,6 +182,57 @@
   display: none;
   gap: 0.58rem;
   flex-wrap: wrap;
+}
+
+/* Light theme overrides: use white surfaces, soft shadows and neutral overlays */
+:global([data-theme="light"]) .card {
+  background: var(--bg-surface);
+}
+
+:global([data-theme="light"]) .card::after {
+  box-shadow: var(--shadow-elev);
+  opacity: 0;
+}
+
+:global([data-theme="light"]) .container {
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-elev);
+  padding: 1rem;
+}
+
+:global([data-theme="light"]) .mediaFrame {
+  border: 1px solid var(--border-color);
+  background: #F8FAFC;
+}
+
+:global([data-theme="light"]) .browserBar {
+  background: transparent;
+  border-bottom: 1px solid var(--border-color);
+}
+
+:global([data-theme="light"]) .dot {
+  background: rgba(15,23,42,0.06);
+}
+
+:global([data-theme="light"]) .overlay {
+  background: linear-gradient(to top, rgba(15,23,42,0.06), rgba(15,23,42,0.02));
+}
+
+:global([data-theme="light"]) .skill {
+  background: #F1F5F9;
+  border: 1px solid var(--border-color);
+  color: var(--color-text);
+}
+
+:global([data-theme="light"]) .secondaryBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--color-text);
+}
+
+:global([data-theme="light"]) .primaryBtn {
+  background: var(--accent-gradient);
+  color: #fff;
 }
 
 .primaryBtn,
@@ -180,16 +247,17 @@
   font-weight: 600;
   border-radius: 999px;
   padding: 0.4rem 0.88rem;
-  transition: transform 280ms ease-in-out, opacity 280ms ease-in-out;
+  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 250ms ease-out;
+  will-change: transform, opacity;
 }
 
 .primaryBtn {
-  background: linear-gradient(135deg, #6f86ff, #5e73e3);
+  background: var(--accent-gradient);
 }
 
 .secondaryBtn {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--border-color);
+  background: var(--glass-1);
 }
 
 .primaryBtn svg,
@@ -199,23 +267,18 @@
 
 .disabledBtn {
   opacity: 0.72;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--glass-1);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover,
   .card:focus-within {
-    transform: translateY(-6px) scale(1.03);
+    transform: translateY(-8px) scale(1.02);
   }
 
   .card:hover::after,
   .card:focus-within::after {
     opacity: 1;
-  }
-
-  .card:hover .image,
-  .card:focus-within .image {
-    transform: scale(1.05);
   }
 
   .card:hover .overlay,
@@ -226,7 +289,7 @@
 
   .card:hover .actions,
   .card:focus-within .actions {
-    transform: translateY(-3px);
+    transform: translateY(0);
   }
 
   .card:hover .skill,
@@ -305,3 +368,4 @@
     transition: none;
   }
 }
+

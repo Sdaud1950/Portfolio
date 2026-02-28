@@ -1,20 +1,20 @@
-@import "../../vars.css";
+@import "/src/vars.css";
 
 .header {
   position: sticky;
   top: 0;
   z-index: 30;
-  backdrop-filter: blur(8px);
-  background: rgba(8, 22, 42, 0.35);
+  background: transparent;
   border-bottom: 1px solid transparent;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.35s ease-out, backdrop-filter 0.35s ease-out, border-color 0.35s ease-out, box-shadow 0.35s ease-out;
+  backdrop-filter: blur(0);
 }
 
 .headerScrolled {
-  backdrop-filter: blur(16px);
-  background: rgba(8, 22, 42, 0.78);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 28px rgba(4, 17, 34, 0.34);
+  background: var(--header-bg-scrolled);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
 }
 
 .navbar {
@@ -29,9 +29,10 @@
   font-size: 1.7rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--text-primary);
   transition: color 0.25s ease;
 }
+
 
 .title:hover {
   color: var(--color-primary);
@@ -61,41 +62,27 @@
   position: relative;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--text-primary);
   text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  transition: color 0.28s ease, background-color 0.28s ease, transform 0.28s ease;
-}
-
-.navLink::after {
-  content: "";
-  position: absolute;
-  left: 0.85rem;
-  right: 0.85rem;
-  bottom: 0.2rem;
-  height: 2px;
-  border-radius: 2px;
-  background: rgba(206, 221, 255, 0.9);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.28s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
 .navLink:hover {
-  color: var(--color-text);
-  background: rgba(255, 255, 255, 0.09);
-  transform: translateY(-1px);
+  color: var(--primary);
+  background: var(--glass-1);
 }
 
 .active {
-  color: var(--color-text);
-  background: linear-gradient(135deg, rgba(111, 134, 255, 0.8), rgba(95, 122, 200, 0.72));
-  box-shadow: 0 10px 20px rgba(4, 21, 45, 0.28);
+  color: var(--text-on-primary);
+  background: var(--primary);
+  box-shadow: 0 4px 12px rgba(111, 134, 255, 0.3);
 }
 
-.active::after {
-  transform: scaleX(1);
+:global([data-theme="light"]) .active {
+  background: var(--primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 @media screen and (max-width: 830px) {
@@ -134,10 +121,10 @@
     align-items: stretch;
     gap: 0.45rem;
     border-radius: 12px;
-    background: linear-gradient(180deg, rgba(25, 55, 109, 0.95) 0%, rgba(11, 36, 71, 0.95) 100%);
+    background: var(--header-bg);
     padding: 0.8rem;
     min-width: 180px;
-    box-shadow: 0 14px 24px rgba(4, 21, 45, 0.35);
+    box-shadow: var(--shadow-elev);
   }
 
   .menuOpen {

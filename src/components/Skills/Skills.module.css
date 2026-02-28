@@ -1,4 +1,4 @@
-@import "../../vars.css";
+@import "/src/vars.css";
 
 .container {
   margin: 0 10% 5.5rem;
@@ -34,7 +34,7 @@
   border-radius: 18px;
   padding: 1.15rem;
   background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-soft);
   transition: transform 0.28s ease, border-color 0.28s ease;
 }
@@ -61,15 +61,15 @@
   border-radius: 12px;
   padding: 0.7rem 0.55rem;
   text-align: center;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--glass-1);
+  border: 1px solid var(--border-color);
   transition: transform 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
 }
 
 .skillItem:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--glass-2);
+  border-color: var(--border-color);
 }
 
 .iconWrap {
@@ -78,8 +78,8 @@
   height: 54px;
   margin: 0 auto 0.5rem;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--glass-1);
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,8 +96,8 @@
   bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%) scale(0.95);
-  background: rgba(4, 21, 45, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--color-surface-strong);
+  border: 1px solid var(--border-color);
   color: var(--color-text);
   border-radius: 8px;
   font-size: 0.75rem;
@@ -121,8 +121,31 @@
 @media (hover: hover) and (pointer: fine) {
   .categoryCard:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--border-color);
   }
+}
+
+/* light theme adjustments */
+:global([data-theme="light"]) .categoryCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-elev);
+}
+
+:global([data-theme="light"]) .skillItem {
+  background: #F8FAFC;
+  border: 1px solid var(--border-color);
+}
+
+:global([data-theme="light"]) .iconWrap {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+}
+
+:global([data-theme="light"]) .tooltip {
+  background: #0F172A;
+  color: #fff;
+  border: 1px solid var(--border-color);
 }
 
 @media screen and (max-width: 1050px) {
