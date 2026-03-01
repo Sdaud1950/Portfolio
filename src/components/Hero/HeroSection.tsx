@@ -89,7 +89,7 @@ const HeroSection = () => {
           <Button label="View Projects" href="#projects" ariaLabel="View projects section" />
           <Button
             label="Download Resume"
-            href="/Daut-Resume.pdf"
+            href="/Daut Shaikh Resume.pdf"
             download
             variant="glass"
             ariaLabel="Download Daut Shaikh resume"
